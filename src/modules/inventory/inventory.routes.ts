@@ -1,8 +1,13 @@
 import { Router } from "express";
 
 import { inventoryController } from "./inventory.controller";
+import { authenticate } from "../../middlewares/authenticate";
+import { requireRole } from "../../middlewares/require-role";
 
 const router = Router();
+
+// Every inventory endpoint is admin-only.
+router.use(authenticate, requireRole("admin"));
 
 router.get("/", inventoryController.getInventory);
 

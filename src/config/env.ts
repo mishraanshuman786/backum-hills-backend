@@ -8,6 +8,8 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(5000),
 
   DATABASE_URL: z.string().min(1),
+  ADMIN_EMAIL: z.string().min(1),
+  ADMIN_PASSWORD: z.string().min(1),
 
   CORS_ORIGINS: z.string().min(1),
 

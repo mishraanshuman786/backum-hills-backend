@@ -13,7 +13,7 @@ RUN bun install --frozen-lockfile
 COPY . .
 
 # Render provides the PORT environment variable
-EXPOSE 5000
+EXPOSE 10000
 
 # Start the Bun server
 CMD ["bun", "run", "start"]
